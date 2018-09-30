@@ -1,0 +1,10 @@
+{
+	"getLabel": {
+		"SimpleName": "Page Label",
+		"Locator": "XPATH:://a(@class)"
+	},
+	"getPrimaryHeaderMenu": {
+		"SimpleName": "Header Menu Options",
+		"Locator": "CLASSNAME::nav navbar-nav navbar-right"
+	}
+}

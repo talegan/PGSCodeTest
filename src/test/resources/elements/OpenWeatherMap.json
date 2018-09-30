@@ -1,7 +1,7 @@
 {
 	"getLabel": {
 		"SimpleName": "Page Label",
-		"Locator": "XPATH:://a(@class)"
+		"Locator": "XPATH:://a[@class='navbar-brand']/img"
 	},
 	"getPrimaryHeaderMenu": {
 		"SimpleName": "Header Menu Options",

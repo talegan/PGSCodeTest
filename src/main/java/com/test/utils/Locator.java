@@ -35,12 +35,12 @@ public class Locator {
         try {
             jsonObject = (JsonObject) parser.parse(new FileReader(elementFileName));
         } catch (FileNotFoundException e) {
-            Assert.fail("No Element File found.");
+            System.out.println("No Element File found.");
         } catch (IOException e) {
-            Assert.fail("Failed to query Class Element File '" + elementClassName + "' "
+        	System.out.println("Failed to query Class Element File '" + elementClassName + "' "
                     + "with element '" + elementName + "'.");
         } catch (ParseException e) {
-            Assert.fail("Failed to query Class Element File '" + elementClassName + "' "
+        	System.out.println("Failed to query Class Element File '" + elementClassName + "' "
                     + "with element '" + elementName + "'.");
         }
         return (JsonObject) jsonObject.get(elementName);
@@ -55,7 +55,7 @@ public class Locator {
         	simpleName =  elementObject.get(SIMPLENAME).toString();
         	locatorString = elementObject.get(LOCATOR).toString();
         } catch (Exception e) {
-            Assert.fail("Error on JSON query.");
+        	System.out.println("Error on JSON query.");
         }
         
         String locatorArr[] = locatorString.split("::");

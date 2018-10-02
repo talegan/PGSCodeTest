@@ -1,10 +1,26 @@
 {
 	"getLabel": {
 		"SimpleName": "Page Label",
-		"Locator": "XPATH:://a[@class='navbar-brand']/img"
+		"Locator": "CSS::a.navbar-brand > img"
 	},
 	"getPrimaryHeaderMenu": {
 		"SimpleName": "Header Menu Options",
-		"Locator": "CLASSNAME::nav navbar-nav navbar-right"
+		"Locator": "CSS::.nav__item > a"
+	},
+	"getSearchBox": {
+		"SimpleName": "Search Box",
+		"Locator": "CSS::#searchform > div > input#q"
+	},
+	"getSearchButton": {
+		"SimpleName": "Search Button",
+		"Locator": "CSS::#searchform > button"
+	},
+	"getNotFoundMsg": {
+		"SimpleName": "Not Found Message",
+		"Locator": "CSS::.alert.alert-warning"
+	},
+	"getForecastList": {
+		"SimpleName": "Search Button",
+		"Locator": "CSS::#forecast-list"
 	}
 }

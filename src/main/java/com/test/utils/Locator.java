@@ -35,12 +35,12 @@ public class Locator {
         try {
             jsonObject = (JsonObject) parser.parse(new FileReader(elementFileName));
         } catch (FileNotFoundException e) {
-            System.out.println("No Element File found.");
+        	Assert.fail("No Element File found.");
         } catch (IOException e) {
-        	System.out.println("Failed to query Class Element File '" + elementClassName + "' "
+        	Assert.fail("Failed to query Class Element File '" + elementClassName + "' "
                     + "with element '" + elementName + "'.");
         } catch (ParseException e) {
-        	System.out.println("Failed to query Class Element File '" + elementClassName + "' "
+        	Assert.fail("Failed to query Class Element File '" + elementClassName + "' "
                     + "with element '" + elementName + "'.");
         }
         return (JsonObject) jsonObject.get(elementName);
@@ -55,12 +55,12 @@ public class Locator {
         	simpleName =  elementObject.get(SIMPLENAME).toString();
         	locatorString = elementObject.get(LOCATOR).toString();
         } catch (Exception e) {
-        	System.out.println("Error on JSON query.");
+        	Assert.fail("Error on JSON query.");
         }
         
         String locatorArr[] = locatorString.split("::");
-        String locatorType = locatorArr[0];
-        String locatorDef = locatorArr[1];
+        String locatorType = locatorArr[0].replaceAll("\"", "");
+        String locatorDef = locatorArr[1].replaceAll("\"", "");
         
         if (inText != null) {
             if (locatorDef.contains(StaticProps.LOCATOR_VARIABLE_UPPER)) {
@@ -75,11 +75,11 @@ public class Locator {
         } else {
             locatorData.put(SIMPLENAME, simpleName);
         }
-        
+                
         if (locatorType.equalsIgnoreCase(StaticProps.LOCATOR_XPATH)) {
             locator = By.xpath(locatorDef);
         } else if (locatorType.equalsIgnoreCase(StaticProps.LOCATOR_CSS)) {
-        	locator = By.cssSelector(locatorDef);
+        	locator = (By)By.cssSelector(locatorDef);
         } else if (locatorType.equalsIgnoreCase(StaticProps.LOCATOR_ID)) {
         	locator = By.id(locatorDef);
         } else if (locatorType.equalsIgnoreCase(StaticProps.LOCATOR_NAME)){

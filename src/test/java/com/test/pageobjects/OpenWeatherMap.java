@@ -27,4 +27,24 @@ public class OpenWeatherMap {
 	public List<WebElement> getPrimaryHeaderMenu() {
 		return this.driver.findElements(locator.getLocator());
 	}
+
+	// PAGE OBJECT IDENTIFIERS
+	public WebElement getSearchBox() {
+		return this.driver.findElement(locator.getLocator());
+	}
+
+	// PAGE OBJECT IDENTIFIERS
+	public WebElement getSearchButton() {
+		return this.driver.findElement(locator.getLocator());
+	}
+
+	// PAGE OBJECT IDENTIFIERS
+	public WebElement getNotFoundMsg() {
+		return this.driver.findElement(locator.getLocator());
+	}
+
+	// PAGE OBJECT IDENTIFIERS
+	public WebElement getForecastList() {
+		return this.driver.findElement(locator.getLocator());
+	}
 }

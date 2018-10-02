@@ -5,9 +5,9 @@ import cucumber.api.junit.Cucumber;
 import cucumber.api.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources", 
+@CucumberOptions(features = "src/test/resources/features", 
 glue = { "com.test.steps" }, 
-tags = {"~@Ignore"},
+tags = {"not @Ignore"},
 plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json" })
 
 public class TestRunner {

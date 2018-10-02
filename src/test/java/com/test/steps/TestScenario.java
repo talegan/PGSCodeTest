@@ -20,8 +20,6 @@ public class TestScenario {
 	@Given("^User creates an instance of (.+) browser$")
 	public void givenUserCreatesAnInstanceOfBrowser(String browser) throws Throwable {
 		if (browser.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\hp\\Downloads\\Selenium_Pack_7_July\\Selenium_Pack_7_July\\code\\SalesForce-App-Project\\chrome\\ChromeLatest\\chromedriver.exe");
 			driver = new ChromeDriver();
 		}
 		

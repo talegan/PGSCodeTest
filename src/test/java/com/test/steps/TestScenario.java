@@ -74,6 +74,17 @@ public class TestScenario {
 	@Then("^User closes the instance of browser$")
 	public void thenUserclosestheinstanceofbrowser() throws Throwable {
 		driver.quit();
-		System.out.println("Browser closed");
+	}
+	
+	@Then("^User validate the webpage displays weather details in current city$")
+	public void thenUservalidatethewebpagedisplaysweatherdetailsincurrentcity() throws Throwable {
+		String currentCityWeatherText = new OpenWeatherMap(driver).getCurrentCityWeatherDetail().getText();
+		Assert.assertEquals("Current weather and forecasts in your city", currentCityWeatherText);		
+	}
+	
+	@Then("^User validate webpage displays (.+) days weather report in current city after clicking on More weather in your city$")
+	public void thenUservalidatewebpagedisplays13daysweatherreportincurrentcityafterclickingonMoreweatherinyourcity(String dayCount) throws Throwable {
+		new OpenWeatherMap(driver).getMoreWeatherInYourCity().click();
+		Assert.assertEquals(Integer.parseInt(dayCount), new OpenWeatherMap(driver).get13DaysForcast().size());
 	}
 }

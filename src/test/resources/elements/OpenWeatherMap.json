@@ -22,5 +22,19 @@
 	"getForecastList": {
 		"SimpleName": "Search Button",
 		"Locator": "CSS::#forecast-list"
+	},
+	"getCurrentCityWeatherDetail": {
+		"SimpleName": "Current City Weather Detail",
+		"Locator": "CSS::h2.widget__title"
+	},
+	"getMoreWeatherInYourCity": {
+		"SimpleName": "More Weather In Your City",
+		"Locator": "CSS::p.text-muted"
+	},
+	"get13DaysForcast": {
+		"SimpleName": "13 Days Forcast",
+		"Locator": "CSS::table.weather-forecast-list__table > tbody > tr"
 	}
+	
+	
 }

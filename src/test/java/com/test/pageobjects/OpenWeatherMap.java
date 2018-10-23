@@ -47,4 +47,21 @@ public class OpenWeatherMap {
 	public WebElement getForecastList() {
 		return this.driver.findElement(locator.getLocator());
 	}
+	
+	// PAGE OBJECT IDENTIFIERS
+	public WebElement getCurrentCityWeatherDetail() {
+		return this.driver.findElement(locator.getLocator());
+	}
+	
+	// PAGE OBJECT IDENTIFIERS
+	public WebElement getMoreWeatherInYourCity() {
+		return this.driver.findElement(locator.getLocator());
+	}
+	
+	// PAGE OBJECT IDENTIFIERS
+	public List<WebElement> get13DaysForcast() {
+		return this.driver.findElements(locator.getLocator());
+	}
+	
+	
 }

@@ -30,3 +30,11 @@ Feature: Creating test for Coading Chalange
 		And User clicks on search button
 	Then User validate the website successfully returns weather details for the city
 		And User closes the instance of browser
+
+ @FourthTest
+  Scenario: Verify weather details displayed for current city by default and clicking on More weather in your city displays 13 days weather report
+    Given User creates an instance of Chrome browser
+    When User navigates to https://openweathermap.org/ page
+	Then User validate the webpage displays weather details in current city
+		And User validate webpage displays 13 days weather report in current city after clicking on More weather in your city
+		And User closes the instance of browser
